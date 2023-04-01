@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import InterfaceEditor from "./components/InterfaceEditor";
+// import InterfaceEditor from "./InterfaceEditor";
 
-function App() {
+const App = () => {
+  const data = [
+    {
+      name: "field1",
+      type: "string",
+      nestedFields: [],
+    },
+    {
+      name: "field2",
+      type: "object",
+      nestedFields: [
+        {
+          name: "subfield1",
+          type: "string",
+          nestedFields: [],
+        },
+      ],
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <InterfaceEditor data={data} /> */}
+      <InterfaceEditor data={data} />
     </div>
   );
-}
+};
 
 export default App;
